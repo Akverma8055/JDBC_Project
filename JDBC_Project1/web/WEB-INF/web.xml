@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <context-param>
+        <param-name>host</param-name>
+        <param-value>smtp.gmail.com</param-value>
+    </context-param>
+    <context-param>
+        <param-name>port</param-name>
+        <param-value>587</param-value>
+    </context-param>
+    <context-param>
+        <param-name>user</param-name>
+        <param-value>aman1582180@gmail.com</param-value>
+    </context-param>
+    <context-param>
+        <param-name>pass</param-name>
+        <param-value>Aman@8055</param-value>
+    </context-param>
+    <context-param>
+        <description>Secuity Questions ===</description>
+        <param-name>Your Pet Name</param-name>
+        <param-value>Your Pet Name</param-value>
+    </context-param>
+    <context-param>
+        <param-name>Your favorite Book Name</param-name>
+        <param-value>Your favorite Book Name</param-value>
+    </context-param>
+    <context-param>
+        <param-name>Your Childhood Friend</param-name>
+        <param-value>Your Childhood Friend</param-value>
+    </context-param>
+    <context-param>
+        <param-name>Your First School Name</param-name>
+        <param-value>Your First School Name</param-value>
+    </context-param>
+    <context-param>
+        <param-name>Your favorite Singer</param-name>
+        <param-value>Your favorite Singer</param-value>
+    </context-param>
+    <filter>
+        <description>Register User Details In Database Table. </description>
+        <filter-name>user_register</filter-name>
+        <filter-class>filter_register.Filter_User_Register</filter-class>
+    </filter>
+    <filter>
+        <description>Register PAge</description>
+        <filter-name>register_page</filter-name>
+        <filter-class>filter_register.Register</filter-class>
+    </filter>
+    <filter>
+        <description>Display LOgin pAGE</description>
+        <filter-name>login_page</filter-name>
+        <filter-class>filter_login.Login_page</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>user_register</filter-name>
+        <servlet-name>Dashboard</servlet-name>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>register_page</filter-name>
+        <servlet-name>Dashboard</servlet-name>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>login_page</filter-name>
+        <servlet-name>check_login_servlet</servlet-name>
+    </filter-mapping>
+    <servlet>
+        <servlet-name>Dashboard</servlet-name>
+        <servlet-class>dashboard_pack.Dashboard</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>check_login_servlet</servlet-name>
+        <servlet-class>filter_login.check_login_servlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>otpservlet</servlet-name>
+        <servlet-class>otpservlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>otp</servlet-name>
+        <servlet-class>otpservlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>newUpdatePassword</servlet-name>
+        <servlet-class>newpass.newUpdatePassword</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Edit_user_page</servlet-name>
+        <servlet-class>edit_user_package.Edit_user_page</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Edit_record</servlet-name>
+        <servlet-class>edit_user_package.Edit_record</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Delete_record</servlet-name>
+        <servlet-class>edit_user_package.Delete_record</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Dashboard</servlet-name>
+        <url-pattern>/Dashboard</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>check_login_servlet</servlet-name>
+        <url-pattern>/check_login_servlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>otpservlet</servlet-name>
+        <url-pattern>/otpservlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>otp</servlet-name>
+        <url-pattern>/otp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>newUpdatePassword</servlet-name>
+        <url-pattern>/newUpdatePassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Edit_user_page</servlet-name>
+        <url-pattern>/Edit_user_page</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Edit_record</servlet-name>
+        <url-pattern>/edit_record</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Delete_record</servlet-name>
+        <url-pattern>/Delete_record</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

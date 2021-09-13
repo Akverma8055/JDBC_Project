@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="js/captcha_val.js">
+        </script>
+
+        <style>
+            body{
+                background: url('images/background.jpg') center;
+
+            }
+            #mainCaptcha{
+                background: lightblue;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body class="no-gutters" onload="Captcha()">
+
+        <nav class="navbar navbar-expand-xxl bg-dark navbar-dark ">
+            <!-- Brand/logo -->
+            <a class="navbar-brand" href="index.html">Servlet</a>
+
+            <!-- Links -->
+            <!--            <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link 1</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link 2</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link 3</a>
+                            </li>
+                        </ul>-->
+
+            <a href="Register.html" class="btn btn-primary" name="regis" value="">New Registration</a>
+        </nav>
+        <div class="container my-4 ">
+            <div class="row clearfix">
+                <div class="col-md-6 m-auto align-center">
+                    <div class="card">
+                        <div class="card-header ">
+                            <h3>Login Form</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="check_login_servlet" method="post">
+                                <div class="form-group">
+                                    <label for="Username" class="label">Username</label>
+                                    <input type="text" name="uname" placeholder="username" class="form-control"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Password" class="label">Password</label>
+                                    <input type="password" name="pass" placeholder="*****" class="form-control"/>
+                                </div>
+                                <div class="form-inline py-2">
+                                    <!--<label for="captcha" class="label">Captcha</label><br/>-->
+                                    <input type="text" name="" id="txtInput" class="form-control"/>&nbsp;-&nbsp;
+                                    <input type="text" name="" id="mainCaptcha" class="form-control text-center"/>
+                                </div><br/>
+                                <div class="form-group d-flex justify-content-center">
+                                    <input type="submit" name="loginbtn " onclick="ValidCaptcha();" value="Login"  class="btn btn-primary w-25 font-weight-bold"/>
+                                </div>
+                            </form>
+                        </div>
+                        <span class="card-footer">
+                            <label>Forget password &nbsp;<a href="check_email.html">click here</a></label>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
